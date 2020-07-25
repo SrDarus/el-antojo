@@ -1,15 +1,16 @@
 {
-  "name": "el-antojo-rest",
-  "version": "1.0.0",
-  "description": "Api rest backend de la casa del antojo",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "darus",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1"
-  }
+    "name": "el-antojo-rest",
+    "version": "1.0.0",
+    "description": "Api rest backend de la casa del antojo",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "darus",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1"
+    }
 }
