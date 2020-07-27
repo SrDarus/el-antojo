@@ -1,49 +1,28 @@
 require('./config/config')
-
 const express = require('express')
-const app = express()
-const bodyParser = require('body-parser')
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
+app = express()
 
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// parse application/json
 app.use(bodyParser.json())
 
-app.get('/', function(req, res) {
-    res.json('hello world')
-})
+app.use(require("./controllers/usuarioController"))
 
+mongoose.connect(
+    // 'mongodb://localhost:27017/el_antojo', {
+    process.env.URLDB, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    }, (err, res) => {
 
-app.get('/usuario', function(req, res) {
-    res.json('hello world')
-})
-
-app.get('/usuarios', function(req, res) {
-    res.json('hello world')
-})
-
-app.post('/usuario', function(req, res) {
-
-    let body = req.body
-    res.json({
-        usuario: body
-    })
-})
-
-app.put('/usuario/:id', function(req, res) {
-
-    let id = req.params.id
-
-    res.json({
-        id
-    })
-})
-
-app.delete('/usuario', function(req, res) {
-    res.json('hello world')
-})
+        if (err) throw err
+            // console.log("conectado", res)
+    });
 
 
 
