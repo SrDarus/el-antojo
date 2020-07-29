@@ -10,7 +10,8 @@ let rolesValidos = {
 
 let usuarioSchema = new Schema({
     email: {
-        type: String
+        type: String,
+        unique: true,
     },
     direccion: {
         type: String,
@@ -28,7 +29,8 @@ let usuarioSchema = new Schema({
         type: String,
     },
     rut: {
-        type: String
+        type: String,
+        unique: true
     },
     img: {
         type: String,

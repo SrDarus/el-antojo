@@ -3,13 +3,12 @@ const express = require('express')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-app = express()
 
+
+const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
-
+app.use(require('./controllers/index'))
 app.use(bodyParser.json())
-
-app.use(require("./controllers/usuarioController"))
 
 mongoose.connect(
     // 'mongodb://localhost:27017/el_antojo', {
